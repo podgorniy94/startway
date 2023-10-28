@@ -1,6 +1,6 @@
+media/
 services/__pycache__
 myproject/__pycache__
 services/migrations
 django_cache/
-media/
 .DS_Store
