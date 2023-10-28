@@ -1,0 +1,19 @@
+{% url 'home' as home %}
+{% load pages_posts_tag %}
+
+{% if request.path == home %}
+{% show_first_post as post %}
+{% include 'inc/pages/_blog_tpl.html' %}
+
+{% else %}
+
+{% show_posts as page_obj %}
+{% for post in page_obj.object_list %}
+{% include 'inc/pages/_blog_tpl.html' %}
+{% endfor %}
+
+{% if page_obj.has_other_pages %}
+{% include 'inc/_pagination.html' %}
+{% endif %}
+
+{% endif %}

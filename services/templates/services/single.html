@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}{{ post.title }} | {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="blog_section" style="padding-top: 30px; padding-bottom: 30px; color: #000000;">
+   <div class="container">
+      <div class="row">
+         <div class="col-md">
+             <div class="blog_img col-md-6"><img src="{{ post.photo.url }}" class="rounded" alt="{{ post.title }}"></div>
+             <h1 class="blog_taital" style="float: none; padding: 0px;">{{ post.title }}</h1>
+             <p>{{ post.content|safe }}</p>
+             <p class="text-right">{{ post.created_at|date }}</p>
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock %}

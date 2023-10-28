@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load email_contact_tag %}
+
+{% block title %}
+{% for page in pages %}
+{% if page.slug in request.path %}
+{{ page.title }}
+{% endif %}
+{% endfor %}
+{% endblock %}
+
+{% block content %}
+{% for page in pages %}
+{% if page.slug in request.path %}
+{% include page.inc %}
+{% endif %}
+{% endfor %}
+{% endblock %}
+
+{% block footer %}
+{% email_form as form %}
+{{ block.super }}
+{% endblock %}

@@ -1,0 +1,43 @@
+<div class="contact_section layout_padding">
+    <div class="container">
+        <h1 class="contact_taital" id="map">Обратная связь</h1>
+        <div class="contact_section_2 layout_padding">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact_main">
+                        <form action="{% url 'contact' %}" method="post">
+                            {% csrf_token %}
+
+                            {{ form.non_field.errors }}
+
+                            {% if success %}
+                            <div class="text-success contact_text">
+                                Отправлено!
+                                <br>
+                                Наш менеджер свяжется с Вами в ближайшее время.
+                            </div>
+                            {% else %}
+                            {% for field in form %}
+                            {{ field }}
+                            <div class="text-danger">
+                            {{ field.errors }}
+                            </div>
+                            {% endfor %}
+
+                            <div class="send_bt"><button type="submit">Отправить</button></div>
+                            {% endif %}
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="map_main">
+                        <div class="map-responsive">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d577325.346816991!2d36.82513124347834!3d55.581524452286246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54afc73d4b0c9%3A0x3d44d6cc5757cf4c!2sMoscow%2C%20Russia!5e0!3m2!1sen!2scz!4v1676666803151!5m2!1sen!2scz" width="600" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

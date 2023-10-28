@@ -1,0 +1,11 @@
+{% url 'home' as home %}
+<ul class="navbar-nav mr-auto nav-item">
+  <li class="nav-item ">
+      <a class="nav-link {% if path == home %}active{% endif %}" href="{{ home }}">Главная</a>
+  </li>
+  {% for page in pages %}
+  <li class="nav-item">
+      <a class="nav-link {% if path == page.get_absolute_url %}active{% endif %}" href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+  </li>
+  {% endfor %}
+</ul>

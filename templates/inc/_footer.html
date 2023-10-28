@@ -1,0 +1,62 @@
+{% load static %}
+{% load email_contact_tag %}
+{% email_form as form %}
+{% url 'home' as home %}
+
+
+<div class="footer_section layout_padding">
+ <div class="container">
+    <div class="location_main">
+        <div class="location_text"><img src="{% static 'images/map-icon.png' %}"><span class="padding_left_10"><a href="{{ home }}#map">Местоположение</a></span></div>
+        <div class="location_text center"><img src="{% static 'images/call-icon.png' %}"><span class="padding_left_10"><a href="{% url 'contact' %}">+7 (925) 619-04-39</a></span></div>
+       <div class="location_text right"><img src="{% static 'images/mail-icon.png' %}"><span class="padding_left_10"><a href="{% url 'contact' %}">nikaweini@gmail.com</a></span></div>
+    </div>
+    <div class="footer_section_2">
+       <div class="row">
+          <div class="col-lg-4">
+             <h2 class="footer_taital">О нас</h2>
+             <p class="footer_text">Компания Start Way предлагает заказчикам комплекcные логистические решения, подбор и закупку товаров в Китае.</p>
+          </div>
+          <div class="col-lg-4">
+             <h2 class="footer_taital">Сотрудничество</h2>
+             <p class="footer_text">Свяжитесь с нами для получения более подробной информации о наших услугах. Мы всегда рады вам помочь.</p>
+          </div>
+          <div class="col-lg-4">
+             <h2 class="footer_taital">Подписка</h2>
+
+             <form action="{% url 'email' %}" method='post' id='email'>
+                 {% csrf_token %}
+
+                 {% if messages %}
+                 {% for message in messages %}
+                 <div class="{{ message.tags }}" style="font-size: 16px">
+                     {{ message }}
+                 </div>
+                 {% endfor %}
+
+                 {% else %}
+
+                 {{ form.email }}
+                 <div class="subscribe_bt"><button type="submit">Подписаться</button></div>
+
+                 {% endif %}
+             </form>
+
+             <div class="social_icon">
+                <ul>
+                    <li><a href="{% url 'contact' %}"><img src="{% static 'images/telegram-icon.png' %}"></a></li>
+                   <li><a href="{% url 'contact' %}"><img src="{% static 'images/whatsapp-icon.png' %}"></a></li>
+                   <li><a href="{% url 'contact' %}"><img src="{% static 'images/viber-icon.png' %}"></a></li>
+                </ul>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+</div>
+
+<div class="copyright_section">
+ <div class="container">
+    <p class="copyright_text">© Start Way 2023</p>
+ </div>
+</div>

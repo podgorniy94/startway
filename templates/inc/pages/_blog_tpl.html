@@ -1,0 +1,18 @@
+<div class="blog_section layout_padding">
+   <div class="container">
+      <div class="row">
+         {% if post.photo %}
+         <div class="col-md-6">
+             <div class="blog_img"><img src="{{ post.photo.url }}" alt="{{ post.title }}"></div>
+         </div>
+         <div class="col-md-6">
+         {% else %}
+         <div class="col-md-12">
+         {% endif %}
+         <h1 class="blog_taital">{{ post.title }}</h1>
+             <p class="blog_text">{{ post.content|truncatewords_html:85|safe }}</p>
+             <div class="read_bt"><a href="{{ post.get_absolute_url }}">Узнать больше</a></div>
+         </div>
+      </div>
+   </div>
+</div>

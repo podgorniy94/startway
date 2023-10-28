@@ -1,0 +1,4 @@
+Имя: {{ name }}
+Номер телефона: {{ number }}
+Email: {{ email }}
+Сообщение: {{ message }}

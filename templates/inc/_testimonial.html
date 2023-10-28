@@ -1,0 +1,46 @@
+{% load static %}
+{% load testimonial_tag %}
+{% show_testimonials as testimonials %}
+
+<div class="testimonial_section layout_padding">
+    <div id="my_carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            {% for i in testimonials %}
+            <li data-target="#my_carousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+            {% endfor %}
+        </ol>
+
+        <div class="carousel-inner">
+
+           {% for i in testimonials %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <div class="container">
+                    <h1 class="testimonial_taital">Отзывы о нас</h1>
+                    <p class="testimonial_text">Нам важно, что о нас говорят</p>
+                    <div class="testimonial_section_2">
+                        <div class="row">
+                            {% for testimonial in i %}
+
+                            <div class="col-md-6">
+                                <div class="testimonial_box">
+                                    <div class="jonimo_taital_main">
+                                        <h4 class="jonimo_text">{{ testimonial.name }}</h4>
+                                        <div class="quick_icon"><img src={% static "images/quick-icon.png" %}></div>
+                                        <div class="quick_icon_1"><img src={% static "images/quick-icon1.png" %}></div>
+                                    </div>
+                                    <p class="dummy_text">{{ testimonial.comment }}</p>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,23 @@
+{% load static %}
+{% url 'home' as home %}
+<div class="about_section layout_padding">
+   <div class="container">
+      <h1 class="about_taital">О нас</h1>
+      <p class="about_text">Надежно, Качественно, Стабильно</p>
+      <div class="about_section_2">
+         <div class="row">
+            <div class="col-lg-6">
+                <div class="about_image"><img src="{% static 'images/about-img.png' %}"></div>
+            </div>
+            <div class="col-lg-6">
+               <div class="about_taital_main">
+                  <p class="lorem_text">Компания Start Way предлагает заказчикам комплексные логистические решения, подбор и закупку товаров в Китае. Наша команда поможет принять оптимальное решение на заказ и станет надежным стратегическим партнером для построения и улучшения бизнеса.</p>
+                  {% if request.path == home %}
+                  <div class="read_bt"><a href="{% url 'home'%}o-nas/">Узнать больше</a></div>
+                  {% endif %}
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

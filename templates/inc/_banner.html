@@ -1,0 +1,42 @@
+{% load static %}
+{% load banner_posts_tag %}
+{% show_banner_posts as posts %}
+<div class="banner_section layout_padding">
+    <div class="container-fluid">
+        <section class="slide-wrapper">
+            <div class="container-fluid">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        {% for n in posts %}
+                            <li data-target="#myCarousel"
+                                data-slide-to="{{ forloop.counter0 }}"
+                                {% if forloop.counter0 == 0 %}class="active"{% endif %}></li>
+                        {% endfor %}
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        {% for post in posts %}
+                            <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+                                <div class="container">
+                                    <div class="banner_main">
+                                        <h1 class="banner_taital">{{ post.title }}</h1>
+                                        <p class="banner_text banner_overflow">{{ post.content|striptags|safe }}</p>
+                                        <div class="btn_main">
+                                            <div class="contact_bt active ">
+                                                <a href="svyazhites-s-nami/">Контакты</a>
+                                            </div>
+                                            <div class="readmore_bt">
+                                                <a href="{{ post.get_absolute_url }}">Читать</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

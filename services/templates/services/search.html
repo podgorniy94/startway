@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Поиск | {{ block.super }} {% endblock %}
+
+{% block content %}
+{% for post in posts %}
+
+{% include 'inc/pages/_blog_tpl.html' %}
+{% empty %}
+<p style="margin-top: 100px; text-align: center;">По вашему запросу ничего не найдено...</p>
+{% endfor %}
+
+{% if posts %}
+{% include 'inc/_pagination.html' %}
+{% endif %}
+{% endblock %}
