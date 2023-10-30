@@ -12,4 +12,3 @@ def email_form():
 @register.simple_tag()
 def contact_form():
     return ContactForm()
-

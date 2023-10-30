@@ -10,5 +10,5 @@ def show_testimonials():
     testimonials = Testimonial.objects.all()
 
     for i in range(0, len(testimonials), 2):
-        testimonial_lst.append(testimonials[i:i+2])
+        testimonial_lst.append(testimonials[i : i + 2])
     return testimonial_lst
