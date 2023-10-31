@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "ckeditor",
     "phonenumber_field",
     "services.apps.ServicesConfig",
+    "django_rename_app",
 ]
 
 MIDDLEWARE = [
@@ -296,8 +297,8 @@ CACHES = {
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "mail.netangels.ru"
 EMAIL_PORT = 465
-EMAIL_HOST_USER = "nika@start-way.ru"
-EMAIL_HOST_PASSWORD = "Zlm1qM4dwvk2fviF"
+EMAIL_HOST_USER = "main@larita-bolocan.cz"
+EMAIL_HOST_PASSWORD = "C7OR9Q8XMuCRWMZR"
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 

@@ -24,7 +24,7 @@
                     <p class="banner_text banner_overflow">{{ post.content|striptags|safe }}</p>
                     <div class="btn_main">
                       <div class="contact_bt active ">
-                        <a href="Rezervace/">Rezervace</a>
+                        <a href="{% url 'contact' %}">Rezervace</a>
                       </div>
                       <div class="readmore_bt">
                         <a href="{{ post.get_absolute_url }}">Číst</a>

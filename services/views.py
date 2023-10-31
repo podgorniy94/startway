@@ -58,7 +58,7 @@ class EmailView(CreateView):
     def post(self, request, *args, **kwargs):
         form = self.get_form()
         if form.is_valid():
-            messages.success(request, "Úspěšně odbíráte.")
+            messages.success(request, "Úspěšně odebíráte")
             form.save()
             return redirect(reverse("home") + "#email")
 

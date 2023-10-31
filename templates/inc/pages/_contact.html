@@ -9,7 +9,8 @@
             <form action="{% url 'contact' %}" method="post">
               {% csrf_token %} {{ form.non_field.errors }}
               {% if success %}
-                <div class="text-success contact_text">
+                <!-- <div class="text-success contact_text"> -->
+                <div style="color:#1BFF00" class=" contact_text">
                   Odesláno!
                   <br />
                   Naš manažer se s Vámi brzy spojí.
