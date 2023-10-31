@@ -380,9 +380,8 @@ window.addEventListener('DOMContentLoaded', function () {
     var video = document.querySelector('.video');
     if (video) {
         video.addEventListener('click', function () {
-
-            var src = video.dataset.src
-            var iframe = '<iframe src="' + src + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"; allowfullscreen></iframe>';
+            var src = video.dataset.src;
+            var iframe = '<iframe src="' + src + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe';
 
             if (video.classList.contains('ready')) {
                 return;
@@ -391,4 +390,4 @@ window.addEventListener('DOMContentLoaded', function () {
             video.innerHTML = iframe;
         });
     }
-})
+});

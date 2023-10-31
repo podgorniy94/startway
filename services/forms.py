@@ -7,13 +7,13 @@ from .models import Email
 class ContactForm(forms.Form):
     name = forms.CharField(
         min_length=2,
-        widget=forms.TextInput(attrs={"placeholder": "Имя", "class": "mail_text"}),
+        widget=forms.TextInput(attrs={"placeholder": "Jméno", "class": "mail_text"}),
     )
 
     number = PhoneNumberField(
-        region="RU",
+        region="CZ",
         widget=forms.TextInput(
-            attrs={"placeholder": "Номер телефона", "class": "mail_text"}
+            attrs={"placeholder": "Mobilní číslo", "class": "mail_text"}
         ),
     )
 
@@ -24,7 +24,7 @@ class ContactForm(forms.Form):
     message = forms.CharField(
         required=False,
         widget=forms.Textarea(
-            attrs={"placeholder": "Сообщение (не обязательно)", "class": "mail_text"}
+            attrs={"placeholder": "Zpráva (není povinná)", "class": "mail_text"}
         ),
     )
 

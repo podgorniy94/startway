@@ -18,7 +18,7 @@ class Home(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["title"] = "Главная"
+        context["title"] = "Hlavní"
         return context
 
 
@@ -33,7 +33,7 @@ class GetPost(DetailView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["title"] = "Главная"
+        context["title"] = "Hlavní"
         return context
 
 
@@ -58,11 +58,11 @@ class EmailView(CreateView):
     def post(self, request, *args, **kwargs):
         form = self.get_form()
         if form.is_valid():
-            messages.success(request, "Новостная рассылка оформлена.")
+            messages.success(request, "Úspěšně odbíráte.")
             form.save()
             return redirect(reverse("home") + "#email")
 
-        messages.error(request, "Email указан неверно.")
+        messages.error(request, "E-mail uveden nesprávně")
         return redirect(reverse("home") + "#email")
 
 
@@ -72,7 +72,7 @@ class ContactFormView(FormView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        title = Page.objects.get(slug="svyazhites-s-nami").title
+        title = Page.objects.get(slug="rezervace").title
         context["title"] = title
         return context
 
@@ -87,7 +87,7 @@ class ContactFormView(FormView):
         text = get_template("services/message.txt")
         html = get_template("services/message.html")
         context = {"name": name, "number": number, "email": email, "message": message}
-        subject = "Сообщение от клиента"
+        subject = "Klientská zprava"
         from_email = settings.EMAIL_HOST_USER
         text_content = text.render(context)
         html_content = html.render(context)

@@ -3,70 +3,76 @@
 {% email_form as form %}
 {% url 'home' as home %}
 <div class="footer_section layout_padding">
-    <div class="container">
-        <div class="location_main">
-            <div class="location_text">
-                <img src="{% static 'images/map-icon.png' %}">
-                <span class="padding_left_10"><a href="{{ home }}#map">Poloha</a></span>
-            </div>
-            <div class="location_text center">
-                <img src="{% static 'images/call-icon.png' %}">
-                <span class="padding_left_10"><a href="{% url 'contact' %}">+420 773 948 875</a></span>
-            </div>
-            <div class="location_text right">
-                <img src="{% static 'images/mail-icon.png' %}">
-                <span class="padding_left_10"><a href="{% url 'contact' %}">rita.bolocan26@gmail.com</a></span>
-            </div>
-        </div>
-        <div class="footer_section_2">
-            <div class="row">
-                <div class="col-lg-4">
-                    <h2 class="footer_taital">LaRita</h2>
-                    <p class="footer_text">Velmi pečlivě naslouchám vašim přáním a vždy poskytuji jen individuální přístup.</p>
-                </div>
-                <div class="col-lg-4">
-                    <h2 class="footer_taital">Motto</h2>
-                    <p class="footer_text">Držím krok s nejnovějšími trendy, protože vaše dokonalá image je pro mě nejvyšší prioritou.</p>
-                </div>
-                <div class="col-lg-4">
-                    <h2 class="footer_taital">Akční nabídky</h2>
-                    <form action="{% url 'email' %}" method='post' id='email'>
-                        {% csrf_token %}
-                        {% if messages %}
-                            {% for message in messages %}<div class="{{ message.tags }}" style="font-size: 16px">{{ message }}</div>{% endfor %}
-                        {% else %}
-                            {{ form.email }}
-                            <div class="subscribe_bt">
-                                <button type="submit">Odběr</button>
-                            </div>
-                        {% endif %}
-                    </form>
-                    <div class="social_icon">
-                        <ul>
-                            <li>
-                                <a href="{% url 'contact' %}">
-                                    <img src="{% static 'images/telegram-icon.png' %}">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{% url 'contact' %}">
-                                    <img src="{% static 'images/whatsapp-icon.png' %}">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{% url 'contact' %}">
-                                    <img src="{% static 'images/viber-icon.png' %}">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="location_main">
+      <div class="location_text">
+        <img src="{% static 'images/map-icon.png' %}">
+        <span class="padding_left_10"><a href="{{ home }}#map">Poloha</a></span>
+      </div>
+      <div class="location_text center">
+        <img src="{% static 'images/call-icon.png' %}">
+        <span class="padding_left_10"><a href="{% url 'contact' %}">+420 773 948 875</a></span>
+      </div>
+      <div class="location_text right">
+        <img src="{% static 'images/mail-icon.png' %}">
+        <span class="padding_left_10"><a href="{% url 'contact' %}">rita.bolocan26@gmail.com</a></span>
+      </div>
     </div>
+    <div class="footer_section_2">
+      <div class="row">
+        <div class="col-lg-4">
+          <h2 class="footer_taital">Motto</h2>
+          <p class="footer_text">Vaše dokonalá image je pro mě nejvyšší prioRita.</p>
+        </div>
+        <div class="col-lg-4">
+          <h2 class="footer_taital">Otevírací doba</h2>
+          <p class="footer_text">
+            po – pá: 08.00 – 21.00
+            <br>
+            sob: 9.00 – 17.00
+            <br>
+            ned: dle dohody
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <h2 class="footer_taital">Akční nabídky</h2>
+          <form action="{% url 'email' %}" method='post' id='email'>
+            {% csrf_token %}
+            {% if messages %}
+              {% for message in messages %}<div class="{{ message.tags }}" style="font-size: 16px">{{ message }}</div>{% endfor %}
+            {% else %}
+              {{ form.email }}
+              <div class="subscribe_bt">
+                <button type="submit">Odběr</button>
+              </div>
+            {% endif %}
+          </form>
+          <div class="social_icon">
+            <ul>
+              <li>
+                <a href="{% url 'contact' %}">
+                  <img src="{% static 'images/telegram-icon.png' %}">
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'contact' %}">
+                  <img src="{% static 'images/whatsapp-icon.png' %}">
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'contact' %}">
+                  <img src="{% static 'images/viber-icon.png' %}">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="copyright_section">
-    <div class="container">
-        <p class="copyright_text">© LaRita 2023</p>
-    </div>
+  <div class="container">
+    <p class="copyright_text">© LaRita 2023</p>
+  </div>
 </div>

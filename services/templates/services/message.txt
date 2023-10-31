@@ -1,4 +1,4 @@
-Имя: {{ name }}
-Номер телефона: {{ number }}
+Jméno: {{ name }}
+Mobilní číslo: {{ number }}
 Email: {{ email }}
-Сообщение: {{ message }}
+Zpráva: {{ message }}
