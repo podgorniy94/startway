@@ -227,7 +227,8 @@ button {
   padding-right: 15px;
   padding-left: 15px;
   font-size: 18px;
-  color: #acabab;
+  color: #909090;
+  font-weight: 500;
   text-transform: uppercase;
 }
 .navbar-light .navbar-nav .nav-link:focus,
@@ -322,10 +323,11 @@ ion-icon {
 .banner_section {
   padding-top: 40px;
   padding-bottom: 70px;
-  border-bottom: 80px solid #13a25d;
+  border-bottom: 80px solid #ffe2e9;
 }
 .banner_main {
   position: relative;
+  border-radius: 25px;
   width: 44%;
   height: 320px;
   float: left;
@@ -380,8 +382,9 @@ ion-icon {
   background-color: #13a25d;
 }
 .contact_bt.active a {
-  color: #ffffff;
-  background-color: #13a25d;
+  color: #000000;
+  background-color: #ffe2e9;
+  font-weight: 500;
 }
 .readmore_bt {
   width: 170px;
@@ -397,7 +400,7 @@ ion-icon {
   background-color: #060707;
   text-align: center;
   padding: 10px 0px;
-  border-radius: 40px;
+  border-radius: 25px;
 }
 .readmore_bt a:hover {
   color: #ffffff;
@@ -443,7 +446,7 @@ ion-icon {
   position: absolute;
   width: 100px;
   height: 390px;
-  background-color: #13a25d;
+  background-color: #ffe2e9;
   left: 0px;
   right: initial;
   top: 0;
@@ -505,10 +508,12 @@ ion-icon {
   text-align: center;
   padding: 10px 0px;
   font-family: "Roboto", sans-serif;
+  border-radius: 25px;
 }
 .read_bt a:hover {
-  color: #ffffff;
-  background-color: #13a25d;
+  color: #000000;
+  font-weight: 500px;
+  background-color: #ffe2e9;
 }
 
 /* about section end */
@@ -805,10 +810,12 @@ ion-icon {
   padding: 10px 0px;
   margin-top: 50px;
   font-family: "Roboto", sans-serif;
+  border-radius: 25px;
 }
 .seemore_bt a:hover {
-  color: #ffffff;
-  background-color: #13a25d;
+  color: #000000;
+  font-weight: 500px;
+  background-color: #ffe2e9;
 }
 
 /* events section end */
@@ -898,9 +905,11 @@ textarea#comment::placeholder {
 }
 .send_bt button {
   width: 100%;
+  border-radius: 22px;
   float: left;
-  background-color: #13a25d;
-  color: #ffffff;
+  background-color: #ffe2e9;
+  color: #000000;
+  font-weight: 500px;
   text-align: center;
   padding: 14px 0px;
   font-size: 16px;
@@ -954,7 +963,7 @@ textarea#comment::placeholder {
   width: 100%;
   font-size: 20px;
   text-transform: uppercase;
-  color: #13a25d;
+  color: #ff69b4;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
 }
@@ -979,7 +988,7 @@ textarea#comment::placeholder {
 }
 
 .testimonial_box:hover {
-  background-color: #13a25d;
+  background-color: #ff69b4;
 }
 .testimonial_box:hover .dummy_text {
   color: #ffffff;
@@ -1009,7 +1018,7 @@ textarea#comment::placeholder {
 
 #my_carousel .carousel-indicators .active {
   width: 50px;
-  background-color: #13a25d;
+  background-color: #ff69b4;
 }
 
 .margin_top90 {
@@ -1112,8 +1121,8 @@ textarea#comment::placeholder {
 .subscribe_bt button {
   width: 100%;
   float: left;
+  color: #ff69b4;
   font-size: 20px;
-  color: #13a25d;
   background-color: transparent;
   text-transform: uppercase;
 }

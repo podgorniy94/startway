@@ -20,7 +20,7 @@ class Testimonial(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=255, verbose_name="Название")
     slug = models.SlugField(max_length=255, verbose_name="URL", unique=True)
-    content = models.TextField(validators=[MinLengthValidator(255)], blank=True)
+    content = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Опубликовано")
     banner_published = models.BooleanField(
         default=False, verbose_name="Опубликовать баннер"
