@@ -1,5 +1,8 @@
+media/
+services/templatetags/__pycache__/
 services/__pycache__
 myproject/__pycache__
 services/migrations
 django_cache/
+.djlintrc
 .DS_Store
